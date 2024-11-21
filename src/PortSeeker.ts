@@ -67,11 +67,13 @@ export default class PortSeeker {
 			const cleanup = () => {
 				socket.removeAllListeners();
 				socket.destroy();
+
+				return;
 			};
 
 			const next = () => {
 				cleanup();
-				resolve(this.firstOpenPort(port + 1));
+				return resolve(this.firstOpenPort(port + 1));
 			};
 
 			// On successful connection, try the next port
@@ -80,16 +82,17 @@ export default class PortSeeker {
 			// If port is available, resolve with the port number
 			socket.on("timeout", () => {
 				cleanup();
-				resolve(port);
+				return resolve(port);
 			});
 
 			// On error, determine if we should try the next port
 			socket.on("error", (err: any) => {
 				cleanup();
+
 				if (err.code === "EADDRINUSE") {
-					resolve(this.firstOpenPort(port + 1));
+					return resolve(this.firstOpenPort(port + 1));
 				} else {
-					resolve(port);
+					return resolve(port);
 				}
 			});
 
