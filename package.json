@@ -1,7 +1,7 @@
 {
   "name": "felixriddle.port-seeker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Library to look for open port numbers",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -9,15 +9,23 @@
     "dist"
   ],
   "scripts": {
-    "test": "ts-node src/cmd/index.ts --test",
-    "build": "tsup"
+    "test": "NODE_ENV=testing jest",
+    "build": "pkgroll"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@jest/globals": "^29.7.0",
     "@types/argparse": "^2.0.15",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^22.9.1",
     "argparse": "^2.0.1",
+    "babel-jest": "^29.7.0",
+    "jest": "29.2",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
     "typescript": "^5.4.2"
