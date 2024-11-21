@@ -1,3 +1,5 @@
+import net from "net";
+
 /**
  * Tiny app to seek available ports
  *
