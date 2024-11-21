@@ -1,6 +1,6 @@
 {
   "name": "felixriddle.port-seeker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library to look for open port numbers",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
