@@ -15,10 +15,10 @@
 		"noFallthroughCasesInSwitch": true,
 		// "resolveJsonModule": true,
 		"outDir": "./dist",
-		"typeRoots": ["node_modules/@types/", "./src/global.d.ts"],
+		"typeRoots": ["./node_modules/@types/", "./src/global.d.ts"],
 		"allowSyntheticDefaultImports": true
 		// "types": ["@types/jest", "@types/node"]
 	},
 	"include": ["src/**/*.ts"],
-	"exclude": ["node_modules"]
+	"exclude": ["./node_modules", "./dist"]
 }

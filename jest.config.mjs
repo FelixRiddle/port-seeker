@@ -1,18 +1,19 @@
 export default {
-	preset: "ts-jest", // Use ts-jest for TypeScript support
-	// collectCoverage: true, // Uncomment if you want coverage reports
-	coverageReporters: ["json", "text", "lcov", "clover"], // Types of coverage reports
-	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"], // Supported file extensions
+	preset: "ts-jest",
+	// collectCoverage: true,
+	coverageReporters: ["json", "text", "lcov", "clover"],
+	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
 	transform: {
-		"^.+\\.(ts|tsx)$": "ts-jest", // Transform TypeScript files with ts-jest
+		"^.+\\.(ts|tsx)$": "ts-jest",
 	},
 	moduleNameMapper: {
-		"^~/(.*)$": "<rootDir>/$1", // Map `~/` to the root directory
-		"^@/(.*)$": "<rootDir>/src/$1", // Map `@/` to the src directory
+		"^~/(.*)$": "<rootDir>/$1",
+		// This tells Jest to map any imports starting with @/ to the src directory.
+		"^@/(.*)$": "<rootDir>/src/$1",
 	},
 	testMatch: [
-		"**/__tests__/**/*.+(ts|js|tsx|jsx)", // Include files in `__tests__` folders
-		"**/?(*.)+(spec|test).+(ts|js|tsx|jsx)", // Match `*.spec.ts` and `*.test.ts`
+		"**/__tests__/**/*.+(ts|js|(x)",
+		"**/?(*.)+(spec|test).+(ts|js|(x)",
 	],
-	testEnvironment: "node", // Use Node.js as the test environment
+	testEnvironment: "node",
 };
